@@ -1,0 +1,205 @@
+[colors]
+background = #1e222a
+background-alt = #353940
+foreground = #979eab
+transparent = #00
+primary = #4bffdc
+alert = ${xrdb:color1}
+battery = #C678DD
+
+[bar/ext]
+monitor = HDMI-A-0
+width = 10%
+height = 20
+radius = 0.0
+fixed-center = false
+offset-y = 0
+offset-x = 0
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+line-size = 2
+padding-left = 1
+module-margin-left = 1
+font-0 = Jetbrains Mono:8;1
+modules-left = bspwm
+wm-restack = bspwm
+
+[bar/main]
+monitor = eDP
+width = 24%
+height = 20
+radius = 0.0
+fixed-center = false
+offset-y = 5
+offset-x = 0
+
+background = ${colors.transparent}
+foreground = ${colors.foreground}
+
+line-size = 2
+
+padding-left = 1
+padding-right = 2
+
+module-margin-left = 1
+module-margin-right = 2
+
+font-0 = Jetbrains Mono:size=8;1
+font-1 = Jetbrains Mono:size=7;1
+font-2 = FontAwesome6Free:size=7:style=solid;1
+
+modules-left = bspwm network2
+
+; wm-restack = bspwm
+
+cursor-click = pointer
+cursor-scroll = ns-resize
+
+
+[bar/back]
+monitor = eDP
+width = 100%
+height = 31
+offset-x = 0
+offset-y = 0
+radius = 0.0
+
+line-size = 2
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+padding-left = 1
+padding-right = 1
+
+module-margin-left = 1
+module-margin-right = 1
+
+modules-center = date
+modules-right = cpu pulseaudio battery backlight wireless-network
+
+tray-position = right
+
+wm-restack = bspwm
+
+font-0 = Jetbrains Mono:size=8;1
+font-1 = FontAwesome6Free:size=8:style=solid;1
+font-2 = Ubuntu Nerd Font:size=8;1 
+font-3 = FontAwesome6Free:size=10:style=solid;1
+font-4 = Ubuntu Nerd Font:size=11;2
+
+cursor-click = pointer
+cursor-scroll = ns-resize
+
+
+
+[module/bspwm]
+type = internal/bspwm
+
+label-focused = %index%
+label-focused-background = ${colors.background-alt}
+label-focused-underline = ${colors.primary}
+label-focused-foreground = #FFF
+label-focused-padding = 1
+
+label-occupied = %index%
+label-occupied-padding = 1
+label-occupied-foreground = #FFF
+label-occupied-background = ${colors.background}
+
+label-urgent = %index%!
+label-urgent-background = ${colors.alert}
+label-urgent-padding = 1
+
+label-empty = %index%
+label-empty-foreground = ${colors.foreground}
+label-empty-background = ${colors.background}
+label-empty-padding = 1
+
+[module/date]
+type = internal/date
+
+interval = 1.0
+date = %H:%M:%S
+time = %Y-%m-%d%
+
+date-alt = %A, %d %B %Y
+time-alt = %H:%M:%S
+
+format = <label>
+format-background = ${colors.background}
+format-foreground = ${colors.foreground}
+
+[module/network2]
+type = internal/network
+interface = wlan0
+interval = 3.0
+ 
+label-connected =  %{T2}%downspeed%  %upspeed%%{T-}
+
+[module/wireless-network]
+type = internal/network
+interface = wlan0
+interval = 3.0
+
+format-connected = <ramp-signal> <label-connected>
+format-connected-foreground = #5DABEB
+label-connected = %{A1:/home/edsel/Documents/Programs/internet-speed/showspeed.sh:}%essid:0:10%%{A}
+
+
+
+format-disconnected = 睊 disconnected
+ramp-signal-0 = 
+
+[module/backlight]
+type = internal/backlight
+card = amdgpu_bl0
+use-actual-brightness = true
+enable-scroll = false
+format = %{T3}<ramp>%{T-} <label>
+format-foreground = #E5C07B
+
+ramp-0 = 
+ramp-1 = 
+ramp-2 = 
+
+[module/cpu]
+type = internal/cpu
+interval = 2
+format-prefix = " "
+format-fonts = 3
+format-foreground = #99C47A
+label = %percentage:1%%
+
+[module/battery]
+type = internal/battery
+battery = BAT0
+adapter = ADP0
+
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+
+label-full = "%percentage%%"
+format-full = "%{T4} %{T-}<label-full>"
+format-full-foreground = ${colors.battery}
+
+label-charging = "%percentage%%"
+format-charging = " <label-charging>"
+format-charging-foreground = ${colors.battery}
+
+label-discharging = "%percentage%%"
+format-discharging = %{T4}<ramp-capacity>%{T-} <label-discharging>
+format-discharging-foreground = ${colors.battery}
+
+[module/pulseaudio]
+type = internal/pulseaudio
+format-volume = <label-volume>
+label-volume =  %percentage%%
+label-volume-foreground = #E06C75
+
+label-muted = %{T5}婢%{T-} muted
+label-muted-foreground = #E06C75
