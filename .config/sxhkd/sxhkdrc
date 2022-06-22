@@ -7,8 +7,11 @@ super + Return
 	urxvt
 
 # program launcher
-ctrl + @space
+super + @space
 	rofi -show run
+
+super + shift + @space
+	rofi -show drun
 
 # nautilus
 super + p
@@ -159,3 +162,15 @@ ctrl + @Print
 	scrot -s --line mode=edge ~/Pictures/Screenshots/%Y-%m-%d_%H%m%S.png
 @Print
 	scrot ~/Pictures/Screenshots/%Y-%m-%d_%H%m%S.png
+
+
+#ytfzf
+
+super + n
+	ytfzf -D -m
+
+super + v
+	ytfzf -D
+
+super + ctrl + v
+	killall mpv

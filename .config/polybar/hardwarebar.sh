@@ -1,0 +1,1 @@
+xprop -name "polybar-hardware_eDP" _NET_WM_PID | grep -o '[[:digit:]]*' && kill $(xprop -name "polybar-hardware_eDP" _NET_WM_PID | grep -o '[[:digit:]]*') || polybar hardware

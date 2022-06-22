@@ -9,17 +9,19 @@ while true
 do
 	BATTERY_LEVEL=$(acpi -b | grep -P -o '[0-9]+(?=%)')
 	STATUS=$(cat $POWERSUPPLY)
-	AL_NOTIFIED=$(cat $CACHE)
+	AL_NOTIFIED=$(cat $CACHE) 
 
-	if [ $BATTERY_LEVEL -le $TOO_LOW -a $STATUS = $NOT_CHARGING -a $CACHE = $NOT_NOTIFIED ]
+	if [ $BATTERY_LEVEL -le $TOO_LOW -a $STATUS = $NOT_CHARGING -a $AL_NOTIFIED = $NOT_NOTIFIED ]
 	then
 		notify-send -u critical "Battery low" "Battery level is ${BATTERY_LEVEL}%!"
+		echo "Show Notification"
 		echo TRUE > $CACHE
 	elif [ $STATUS = $IS_CHARGING ]
 	then
-		echo TRUE > $CACHE
-	else
+		echo "Charging"
 		echo FALSE > $CACHE
+	else
+		echo "Don't Show"
 	fi
-	sleep 180
+	sleep 5
 done

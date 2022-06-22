@@ -22,12 +22,13 @@ bspc rule -a Screenkey manage=off
 
 #AutoStart
 $HOME/.config/polybar/launch.sh
-picom -f --experimental-backends &
+picom -f &
 feh --bg-fill ~/Pictures/Wallpaper/AnnapurnaMassif.jpg &
 xset b off &
 
 xrdb ~/.Xtheme1 &
 killall safeeyes; safeeyes &
 xsetroot -cursor_name left_ptr &
-$HOME/script/battery-status.sh &
+#$HOME/script/battery_status/battery-getter.sh &
+$HOME/script/battery-status.sh & 
 xset s off & xset -dpms

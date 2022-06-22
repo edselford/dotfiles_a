@@ -1,6 +1,6 @@
 !--------------------xdefauls
 !! URxvt Appearance
-URxvt.font: xft:Jetbrains Mono:semibold:size=10:style=regular,xft:ttf-dejavu
+URxvt.font: xft:Jetbrains Mono:semibold:size=10:style=regular,xft:ttf-dejavu,xft:ttf-symbola
 URxvt.letterSpace: 0
 URxvt.lineSpace: 0
 URxvt.geometry: 92x24
