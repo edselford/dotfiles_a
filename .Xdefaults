@@ -1,6 +1,7 @@
 !--------------------xdefauls
 !! URxvt Appearance
-URxvt.font: xft:Jetbrains Mono:semibold:size=10:style=regular,xft:ttf-dejavu,xft:ttf-symbola
+URxvt.font: xft:JetBrains Mono Nerd Font:regular:size=10:style=regular,xft:ttf-dejavu,xft:ttf-symbola
+!!,xft:FiraMono Nerd Font:size=10:style=regular
 URxvt.letterSpace: 0
 URxvt.lineSpace: 0
 URxvt.geometry: 92x24
@@ -12,8 +13,10 @@ URxvt.scrollBar: false
 URxvt.scrollBar_right: false
 URxvt.urgentOnBell: true
 URxvt.depth: 32
-URxvt*background: [95]#161616
+!URxvt*background: [95]#161616
+URxvt*background: [90]#0F0F17
 URxvt*foreground: #efefef
+
 !URxvt*color0: #777777
 !URxvt*color8: #616161
 !URxvt*color1: #efefef
@@ -77,8 +80,55 @@ URxvt.iso14755: false
 URxvt.iso14755_52: false
 
 urxvt.perl-ext-common: default,tabbed,matcher,resize-font,-tabbed
+!!URxvt.perl-ext-common: default,matcher,tabbed,font-size
 
-URxvt.keysym.Control-plus: resize-font:bigger
-URxvt.keysym.Control-minus: resize-font:smaller
+URxvt.keysym.Control-Up: resize-font:bigger
+URxvt.keysym.Control-Down: resize-font:smaller
 URxvt.keysym.Control-equal: resize-font:bigger
 URxvt.keysym.Control-question: resize-font:reset
+
+
+!! URxvt Link Click
+urxvt*perl-lib:            /usr/lib/urxvt/perl/
+urxvt*perl-ext-common:        default,matcher
+urxvt*urlLauncher:        /usr/bin/firefox
+urxvt*matcher.button:        1
+urxvt*matcher.pattern.1:   \\bwww\\.[\\w-]+\\.[\\w./?&@#-]*[\\w/-]
+
+
+
+
+
+
+Nsxiv.window.background: #0F0F17
+Nsxiv.window.foreground: #efefef
+!Nsxiv.window.alpha
+
+
+
+
+
+
+
+
+
+
+
+
+
+!! XTerm configuration
+XTerm.vt100.faceName: JetBrains Mono Nerd Font:regular:size=10
+XTerm.vt100.foreground: rgb:ef/ef/ef
+XTerm.vt100.background: rgb:0F/0F/17
+
+XTerm.vt100.geometry: 92x24
+XTerm.vt100.internalBorder: 10
+
+
+!! XTerm shortcut
+XTerm.vt100.translations: #override \n\
+		Ctrl Shift <Key>C: copy-selection(CLIPBOARD) \n\
+		Ctrl Shift <Key>V: insert-selection(CLIPBOARD) \n\
+		Ctrl <Key>+:larger-vt-font() \n\
+		Ctrl <Key>-:smaller-vt-font() \n\
+
