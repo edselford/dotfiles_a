@@ -24,6 +24,7 @@ bspc rule -a Matplotlib state=floating
 #AutoStart
 $HOME/.config/polybar/launch.sh
 picom -f &
+xrandr --output eDP --mode 1366x768 --scale 1x1 --output HDMI-A-0 --mode 1360x768 --scale 1x1 --right-of eDP &
 feh --bg-fill ~/Pictures/Wallpaper/AnnapurnaMassif.jpg &
 xset b off &
 

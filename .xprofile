@@ -1,2 +1,5 @@
 # Faster key repeat and delay
 xset r rate 180 35
+
+export AWT_TOOLKIT=MToolkit
+export _JAVA_AWT_WM_NONREPARENTING=1

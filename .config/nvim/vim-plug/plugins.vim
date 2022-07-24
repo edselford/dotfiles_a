@@ -32,14 +32,15 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 	Plug 'dhruvasagar/vim-table-mode'
 	"Indent Line
 	Plug 'Yggdroot/indentLine'
+	"Sudo
+	Plug 'lambdalisue/suda.vim'
 
 	"Fix Cursor Hold
 	Plug 'antoinemadec/FixCursorHold.nvim'
 
 	"Theme
-	Plug 'bluz71/vim-moonfly-colors'
-	Plug 'Luxed/ayu-vim'
-	"Plug 'joshdick/onedark.vim'
-	Plug 'EdenEast/nightfox.nvim'
-
+	"Plug 'bluz71/vim-moonfly-colors'
+	"Plug 'Luxed/ayu-vim'
+	Plug 'joshdick/onedark.vim'
+	"Plug 'EdenEast/nightfox.nvim'
 call plug#end()

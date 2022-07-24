@@ -123,7 +123,8 @@ XTerm.vt100.background: rgb:0F/0F/17
 
 XTerm.vt100.geometry: 92x24
 XTerm.vt100.internalBorder: 10
-
+XTerm.vt100.backarrowKey: false
+XTerm.ttyModes: erase ^?
 
 !! XTerm shortcut
 XTerm.vt100.translations: #override \n\

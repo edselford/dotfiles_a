@@ -1,11 +1,11 @@
 source $HOME/.config/nvim/vim-plug/plugins.vim
-"source $HOME/.config/nvim/themes/ayu.vim
+source $HOME/.config/nvim/themes/onedark.vim
 source $HOME/.config/nvim/plugins/comments.vim
 
-colorscheme nightfox
+"colorscheme nightfox
 
 let g:lightline = {
-  \ 'colorscheme': "nightfox",
+  \ 'colorscheme': "onedark",
   \ 'separator': { 'left': '', 'right': '' },
   \ 'subseparator': { 'left': '', 'right': '' }
   \ }

@@ -17,6 +17,8 @@ PS1="\W $ "
 [ -n "$XTERM_VERSION" ] && transset-df -m 0.9 --id "$WINDOWID" >/dev/null
 export PATH=$PATH:~/Documents/Programs/AndroidSDK/platform-tools/
 export EDITOR=nvim
+export AWT_TOOLKIT=MToolkit
+export _JAVA_AWT_WM_NONREPARENTING=1
 
 exec fish
 
