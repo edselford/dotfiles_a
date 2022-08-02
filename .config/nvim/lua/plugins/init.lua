@@ -166,6 +166,8 @@ local plugins = {
     end,
   },
 
+  ["lambdalisue/suda.vim"] = {},
+
   -- file managing , picker etc
   ["kyazdani42/nvim-tree.lua"] = {
     ft = "alpha",
